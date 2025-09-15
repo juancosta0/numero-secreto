@@ -32,7 +32,7 @@ function verificarChute() {
             exibirTextoNaTela('p', 'O número secreto é maior');
         }
         tentativas++;
-        limparCampo();
+        limparCampo('input');
     }
 }
 
@@ -52,14 +52,14 @@ function gerarNumeroAleatorio() {
     }
 }
 
-function limparCampo() {
-    chute = document.querySelector('input');
+function limparCampo(campo) {
+    chute = document.querySelector(campo);
     chute.value = '';
 }
 
 function reiniciarJogo() {
     numeroSecreto = gerarNumeroAleatorio();
-    limparCampo();
+    limparCampo('input');
     tentativas = 1;
     exibirMensagemInicial();
     document.getElementById('reiniciar').setAttribute('disabled', true)
